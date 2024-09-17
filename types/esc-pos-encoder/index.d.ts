@@ -49,8 +49,17 @@ type styleType = "single" | "double";
 
 type deviceType = 0 | 1;
 
+
 declare class EscPosEncoder {
-    constructor();
+    constructor(options?: {
+        width?: number;
+        embedded?: boolean;
+        wordWrap?: boolean;
+        imageMode?: 'column' | 'raster';
+        createCanvas?: null | (() => any);
+        codepageMapping?: string | Record<string, number>;
+        codepageCandidates?: string[];
+    });
 
     align(value: alignType): EscPosEncoder;
 

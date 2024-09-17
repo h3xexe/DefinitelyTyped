@@ -1,6 +1,14 @@
 import EscPosEncoder = require("esc-pos-encoder");
 
-const encoder = new EscPosEncoder();
+const encoder = new EscPosEncoder({
+    imageMode: "column",
+    codepageMapping: "windows1251",
+    codepageCandidates: ["windows1251", "cp936"],
+    createCanvas: null,
+    width: 500,
+    embedded: true,
+    wordWrap: true,
+});
 
 const result1 = encoder
     .initialize()
